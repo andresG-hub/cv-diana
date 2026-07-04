@@ -1,497 +1,585 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Diana Marcela Osorio Arias | Analista de Costos e Inventarios</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root {
-            --primary: #1B3A5C;
-            --primary-light: #2C5F8A;
-            --accent: #C8A961;
-            --accent-light: #E8D5A0;
-            --gray-dark: #2D2D2D;
-            --gray-medium: #5A5A5A;
-            --gray-light: #8A8A8A;
-            --gray-ultralight: #F5F7FA;
-            --white: #FFFFFF;
-            --border: #E2E8F0;
-        }
-        body {
-            font-family: 'Open Sans', sans-serif;
-            color: var(--gray-dark);
-            background: var(--white);
-            line-height: 1.6;
-            font-size: 9.5pt;
-        }
-        .cv-container {
-            width: 210mm;
-            min-height: 297mm;
-            margin: 0 auto;
-            background: var(--white);
-            position: relative;
-        }
-        /* HEADER */
-        .header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            padding: 32px 38px;
-            display: flex;
-            align-items: center;
-            gap: 28px;
-            position: relative;
-        }
-        .header::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0; right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent), var(--accent-light), var(--accent));
-        }
-        .photo-container {
-            width: 110px;
-            height: 110px;
-            border-radius: 50%;
-            border: 3px solid var(--accent);
-            overflow: hidden;
-            flex-shrink: 0;
-            background: var(--primary-light);
-        }
-        .photo-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .header-info { flex: 1; }
-        .header-name {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 24pt;
-            font-weight: 700;
-            color: var(--white);
-            letter-spacing: 0.5px;
-            margin-bottom: 3px;
-        }
-        .header-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 11pt;
-            font-weight: 400;
-            color: var(--accent);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 12px;
-        }
-        .header-contact {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 18px;
-        }
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            color: rgba(255,255,255,0.9);
-            font-size: 8.5pt;
-        }
-        .contact-icon {
-            width: 14px; height: 14px;
-            fill: var(--accent);
-            flex-shrink: 0;
-        }
-        /* MAIN LAYOUT */
-        .main-content {
-            display: grid;
-            grid-template-columns: 1fr 260px;
-        }
-        .left-column { padding: 28px 32px; }
-        .right-column {
-            background: var(--gray-ultralight);
-            padding: 28px 22px;
-            border-left: 1px solid var(--border);
-        }
-        /* SECTIONS */
-        .section { margin-bottom: 24px; }
-        .section-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 10pt;
-            font-weight: 700;
-            color: var(--primary);
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 12px;
-            padding-bottom: 6px;
-            border-bottom: 2px solid var(--accent);
-        }
-        /* PROFILE */
-        .profile-text {
-            font-size: 9.5pt;
-            line-height: 1.7;
-            color: var(--gray-dark);
-            text-align: justify;
-        }
-        /* EXPERIENCE */
-        .exp-item {
-            margin-bottom: 20px;
-            padding-left: 14px;
-            border-left: 2px solid var(--border);
-            position: relative;
-        }
-        .exp-item::before {
-            content: '';
-            position: absolute;
-            left: -5px; top: 6px;
-            width: 8px; height: 8px;
-            background: var(--accent);
-            border-radius: 50%;
-        }
-        .exp-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 3px;
-            flex-wrap: wrap;
-        }
-        .exp-company {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 9.5pt;
-            font-weight: 600;
-            color: var(--primary);
-        }
-        .exp-date {
-            font-size: 8pt;
-            color: var(--gray-medium);
-            font-weight: 500;
-            background: var(--gray-ultralight);
-            padding: 2px 8px;
-            border-radius: 3px;
-        }
-        .exp-position {
-            font-size: 9pt;
-            font-weight: 600;
-            color: var(--gray-dark);
-            margin-bottom: 5px;
-        }
-        .exp-list {
-            list-style: none;
-            padding: 0;
-        }
-        .exp-list li {
-            font-size: 8.5pt;
-            line-height: 1.55;
-            color: var(--gray-dark);
-            margin-bottom: 3px;
-            padding-left: 12px;
-            position: relative;
-        }
-        .exp-list li::before {
-            content: '';
-            position: absolute;
-            left: 0; top: 6px;
-            width: 4px; height: 4px;
-            background: var(--accent);
-            border-radius: 1px;
-            transform: rotate(45deg);
-        }
-        /* RIGHT COLUMN */
-        .right-section { margin-bottom: 20px; }
-        .right-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 9pt;
-            font-weight: 700;
-            color: var(--primary);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-            padding-bottom: 5px;
-            border-bottom: 2px solid var(--accent);
-        }
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 4px;
-        }
-        .tag {
-            font-size: 7.5pt;
-            padding: 3px 7px;
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 3px;
-            color: var(--gray-dark);
-            font-weight: 500;
-        }
-        .tag.hl {
-            background: var(--primary);
-            color: var(--white);
-            border-color: var(--primary);
-        }
-        .tool-item, .soft-item {
-            display: flex;
-            align-items: center;
-            gap: 7px;
-            margin-bottom: 6px;
-            font-size: 8.5pt;
-            color: var(--gray-dark);
-        }
-        .dot {
-            width: 5px; height: 5px;
-            background: var(--accent);
-            border-radius: 50%;
-            flex-shrink: 0;
-        }
-        .dot-dark {
-            width: 5px; height: 5px;
-            background: var(--primary);
-            border-radius: 50%;
-            flex-shrink: 0;
-        }
-        .edu-item { margin-bottom: 12px; }
-        .edu-degree {
-            font-size: 8.5pt;
-            font-weight: 600;
-            color: var(--gray-dark);
-        }
-        .edu-inst {
-            font-size: 8pt;
-            color: var(--gray-medium);
-            margin-top: 1px;
-        }
-        .course-item {
-            font-size: 8pt;
-            color: var(--gray-dark);
-            margin-bottom: 5px;
-            padding-left: 10px;
-            position: relative;
-        }
-        .course-item::before {
-            content: '';
-            position: absolute;
-            left: 0; top: 5px;
-            width: 4px; height: 4px;
-            background: var(--accent);
-            border-radius: 50%;
-        }
-        /* PRINT */
-        @media print {
-            body { margin: 0; padding: 0; }
-            .cv-container { box-shadow: none; }
-            #pdf-btn { display: none !important; }
-        }
-        @media screen {
-            body { background: #ddd; padding: 20px; }
-            .cv-container { box-shadow: 0 8px 30px rgba(0,0,0,0.15); }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diana Marcela Osorio Arias | Analista de Costos e Inventarios</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--navy:#0F2027;
+--navy-mid:#203A43;
+--navy-light:#2C5364;
+--gold:#D4A853;
+--gold-light:#F2D98D;
+--gold-glow:rgba(212,168,83,0.15);
+--white:#FFFFFF;
+--off-white:#FAFBFC;
+--gray-100:#F1F5F9;
+--gray-200:#E2E8F0;
+--gray-400:#94A3B8;
+--gray-600:#475569;
+--gray-800:#1E293B;
+}
+body{
+font-family:'Poppins',sans-serif;
+background:linear-gradient(160deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);
+min-height:100vh;
+padding:30px 20px;
+font-size:10px;
+}
+.page{
+width:210mm;
+min-height:297mm;
+margin:0 auto;
+background:var(--white);
+overflow:hidden;
+box-shadow:0 30px 80px rgba(0,0,0,0.4);
+display:grid;
+grid-template-columns:220px 1fr;
+}
+/* === SIDEBAR === */
+.sidebar{
+background:linear-gradient(180deg,var(--navy) 0%,var(--navy-mid) 50%,var(--navy-light) 100%);
+padding:0;
+color:var(--white);
+position:relative;
+overflow:hidden;
+}
+.sidebar::before{
+content:'';
+position:absolute;
+top:-50%;right:-50%;
+width:200%;height:200%;
+background:radial-gradient(circle,rgba(212,168,83,0.05) 0%,transparent 70%);
+animation:pulse 8s ease-in-out infinite;
+}
+@keyframes pulse{
+0%,100%{transform:scale(1);opacity:0.5}
+50%{transform:scale(1.1);opacity:1}
+}
+.sidebar-content{position:relative;z-index:2;padding:30px 20px;}
+/* Photo */
+.photo-wrapper{
+text-align:center;
+margin-bottom:24px;
+}
+.photo-frame{
+width:130px;
+height:130px;
+border-radius:50%;
+margin:0 auto;
+position:relative;
+}
+.photo-frame::before{
+content:'';
+position:absolute;
+inset:-4px;
+border-radius:50%;
+background:conic-gradient(var(--gold),var(--gold-light),var(--gold),var(--gold-light),var(--gold));
+animation:rotate 6s linear infinite;
+}
+@keyframes rotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.photo-frame img{
+width:100%;
+height:100%;
+border-radius:50%;
+object-fit:cover;
+position:relative;
+z-index:2;
+border:3px solid var(--navy);
+}
+.photo-frame .placeholder{
+width:100%;height:100%;
+border-radius:50%;
+background:var(--navy-mid);
+display:flex;align-items:center;justify-content:center;
+position:relative;z-index:2;
+border:3px solid var(--navy);
+}
+.photo-frame .placeholder i{font-size:40px;color:var(--gold);opacity:0.5;}
+/* Contact */
+.sidebar-section{margin-bottom:22px;}
+.sidebar-title{
+font-size:9px;
+font-weight:700;
+text-transform:uppercase;
+letter-spacing:2.5px;
+color:var(--gold);
+margin-bottom:12px;
+padding-bottom:6px;
+border-bottom:1px solid rgba(212,168,83,0.3);
+}
+.contact-item{
+display:flex;
+align-items:flex-start;
+gap:10px;
+margin-bottom:10px;
+font-size:8.5px;
+color:rgba(255,255,255,0.85);
+line-height:1.4;
+}
+.contact-item i{
+color:var(--gold);
+font-size:11px;
+width:14px;
+text-align:center;
+margin-top:1px;
+}
+/* Skills tags */
+.skill-pill{
+display:inline-block;
+padding:4px 9px;
+margin:3px 2px;
+border-radius:20px;
+font-size:7.5px;
+font-weight:500;
+background:rgba(212,168,83,0.12);
+color:var(--gold-light);
+border:1px solid rgba(212,168,83,0.25);
+transition:all 0.3s;
+}
+.skill-pill.featured{
+background:var(--gold);
+color:var(--navy);
+border-color:var(--gold);
+font-weight:600;
+}
+/* Soft skills */
+.soft-item{
+display:flex;align-items:center;gap:8px;
+margin-bottom:7px;font-size:8px;
+color:rgba(255,255,255,0.8);
+}
+.soft-item::before{
+content:'';
+width:6px;height:6px;
+background:var(--gold);
+border-radius:50%;
+flex-shrink:0;
+}
+/* Languages */
+.lang-item{
+display:flex;align-items:center;justify-content:space-between;
+margin-bottom:6px;font-size:8.5px;color:rgba(255,255,255,0.85);
+}
+.lang-bar{
+width:60px;height:4px;
+background:rgba(255,255,255,0.15);
+border-radius:2px;overflow:hidden;
+}
+.lang-bar-fill{
+height:100%;
+background:linear-gradient(90deg,var(--gold),var(--gold-light));
+border-radius:2px;
+}
+/* === MAIN CONTENT === */
+.main{
+padding:32px 35px;
+background:var(--white);
+}
+/* Name header */
+.name-block{
+margin-bottom:24px;
+padding-bottom:20px;
+border-bottom:2px solid var(--gray-200);
+position:relative;
+}
+.name-block::after{
+content:'';
+position:absolute;
+bottom:-2px;left:0;
+width:80px;height:2px;
+background:linear-gradient(90deg,var(--gold),var(--gold-light));
+}
+.name{
+font-family:'Playfair Display',serif;
+font-size:28px;
+font-weight:800;
+color:var(--gray-800);
+line-height:1.1;
+margin-bottom:6px;
+}
+.title-role{
+font-size:12px;
+font-weight:500;
+color:var(--gold);
+text-transform:uppercase;
+letter-spacing:3px;
+}
+/* Section titles */
+.section{margin-bottom:22px;}
+.section-head{
+display:flex;align-items:center;gap:10px;
+margin-bottom:14px;
+}
+.section-head i{
+width:28px;height:28px;
+background:linear-gradient(135deg,var(--navy),var(--navy-light));
+border-radius:8px;
+display:flex;align-items:center;justify-content:center;
+color:var(--gold);font-size:12px;
+}
+.section-head h2{
+font-size:11px;
+font-weight:700;
+text-transform:uppercase;
+letter-spacing:2px;
+color:var(--gray-800);
+}
+/* Profile */
+.profile-text{
+font-family:'Inter',sans-serif;
+font-size:9.5px;
+line-height:1.8;
+color:var(--gray-600);
+text-align:justify;
+padding:14px 16px;
+background:var(--gray-100);
+border-radius:10px;
+border-left:3px solid var(--gold);
+}
+/* Experience */
+.exp-card{
+margin-bottom:18px;
+padding:14px 16px;
+border-radius:10px;
+background:var(--off-white);
+border:1px solid var(--gray-200);
+transition:all 0.3s;
+position:relative;
+overflow:hidden;
+}
+.exp-card::before{
+content:'';
+position:absolute;
+top:0;left:0;bottom:0;
+width:3px;
+background:linear-gradient(180deg,var(--gold),var(--navy-light));
+border-radius:0 3px 3px 0;
+}
+.exp-top{
+display:flex;justify-content:space-between;
+align-items:flex-start;margin-bottom:4px;
+}
+.exp-company{
+font-size:10px;font-weight:700;
+color:var(--navy);
+}
+.exp-date{
+font-size:7.5px;font-weight:600;
+color:var(--gold);
+background:var(--gold-glow);
+padding:3px 8px;border-radius:12px;
+}
+.exp-role{
+font-size:9px;font-weight:600;
+color:var(--gray-600);margin-bottom:8px;
+}
+.exp-list{list-style:none;padding:0;}
+.exp-list li{
+font-family:'Inter',sans-serif;
+font-size:8.5px;
+line-height:1.6;
+color:var(--gray-600);
+margin-bottom:4px;
+padding-left:14px;
+position:relative;
+}
+.exp-list li::before{
+content:'';
+position:absolute;left:0;top:6px;
+width:6px;height:6px;
+border:2px solid var(--gold);
+border-radius:50%;
+}
+/* Education */
+.edu-card{
+padding:12px 16px;
+background:var(--off-white);
+border-radius:10px;
+border:1px solid var(--gray-200);
+}
+.edu-degree{font-size:9.5px;font-weight:600;color:var(--gray-800);}
+.edu-school{font-size:8.5px;color:var(--gray-400);margin-top:2px;}
+/* Courses */
+.course-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:6px;
+}
+.course-chip{
+font-size:7.5px;
+padding:6px 10px;
+background:var(--gray-100);
+border-radius:6px;
+color:var(--gray-600);
+text-align:center;
+border:1px solid var(--gray-200);
+}
+/* Tools section in main */
+.tools-row{
+display:flex;flex-wrap:wrap;gap:6px;
+}
+.tool-badge{
+display:flex;align-items:center;gap:5px;
+padding:5px 10px;
+background:linear-gradient(135deg,var(--navy),var(--navy-light));
+border-radius:6px;
+font-size:7.5px;
+color:var(--white);
+font-weight:500;
+}
+.tool-badge i{color:var(--gold);font-size:9px;}
+/* PDF Button */
+#pdf-btn{
+position:fixed;bottom:25px;right:25px;z-index:9999;
+}
+#pdf-btn button{
+background:linear-gradient(135deg,var(--gold),#e8b84b);
+color:var(--navy);border:none;
+padding:14px 28px;border-radius:30px;
+font-family:'Poppins',sans-serif;
+font-size:13px;font-weight:700;
+cursor:pointer;
+box-shadow:0 8px 25px rgba(212,168,83,0.4);
+transition:all 0.3s;
+display:flex;align-items:center;gap:8px;
+}
+#pdf-btn button:hover{transform:translateY(-2px);box-shadow:0 12px 35px rgba(212,168,83,0.5);}
+/* Print */
+@media print{
+body{background:none;padding:0;}
+.page{box-shadow:none;width:100%;}
+#pdf-btn{display:none!important;}
+}
+</style>
 </head>
 <body>
-<div class="cv-container">
+<div class="page" id="cv">
 
-    <!-- HEADER -->
-    <header class="header">
-        <div class="photo-container">
-            <!-- FOTO: Reemplaza diana.png en la misma carpeta -->
-            <img src="diana.png" alt="Diana Marcela Osorio Arias">
-        </div>
-        <div class="header-info">
-            <h1 class="header-name">Diana Marcela Osorio Arias</h1>
-            <p class="header-title">Analista de Costos e Inventarios</p>
-            <div class="header-contact">
-                <span class="contact-item">
-                    <svg class="contact-icon" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                    (+57) 320 665 82 86
-                </span>
-                <span class="contact-item">
-                    <svg class="contact-icon" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                    dianaosorio826@gmail.com
-                </span>
-                <span class="contact-item">
-                    <svg class="contact-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                    Dosquebradas, Risaralda
-                </span>
-            </div>
-        </div>
-    </header>
+<!-- SIDEBAR -->
+<aside class="sidebar">
+<div class="sidebar-content">
 
-    <!-- MAIN -->
-    <div class="main-content">
-        <!-- LEFT -->
-        <main class="left-column">
-
-            <!-- PERFIL -->
-            <section class="section">
-                <h2 class="section-title">Perfil Profesional</h2>
-                <p class="profile-text">
-                    Economista con m&aacute;s de 5 a&ntilde;os de experiencia en an&aacute;lisis de costos, control presupuestal, conciliaciones contables y optimizaci&oacute;n de procesos. Trayectoria en sector p&uacute;blico y privado con enfoque en planeaci&oacute;n financiera, elaboraci&oacute;n de informes de rentabilidad, seguimiento de indicadores KPI y mejora continua. S&oacute;lidas competencias en control interno, auditor&iacute;a, gesti&oacute;n documental y an&aacute;lisis de estados financieros para la toma de decisiones estrat&eacute;gicas. Orientada a resultados con capacidad demostrada para reducir costos, optimizar recursos y fortalecer el cumplimiento normativo.
-                </p>
-            </section>
-
-            <!-- EXPERIENCIA -->
-            <section class="section">
-                <h2 class="section-title">Experiencia Profesional</h2>
-
-                <div class="exp-item">
-                    <div class="exp-header">
-                        <span class="exp-company">Uni&oacute;n Temporal Prosperidad 2011</span>
-                        <span class="exp-date">Dic 2014 &ndash; Nov 2017</span>
-                    </div>
-                    <p class="exp-position">Asistente de Costos</p>
-                    <ul class="exp-list">
-                        <li>Administr&oacute; bases de datos de transporte, equipos, mano de obra y materiales, consolidando informaci&oacute;n cr&iacute;tica para el an&aacute;lisis de costos operativos y la toma de decisiones presupuestales.</li>
-                        <li>Ejecut&oacute; conciliaciones contables con proveedores y subcontratistas, garantizando la integridad financiera y la detecci&oacute;n oportuna de desviaciones.</li>
-                        <li>Dise&ntilde;&oacute; cuadros de control e informes peri&oacute;dicos de costos que facilitaron el monitoreo de rentabilidad y la asignaci&oacute;n eficiente de recursos.</li>
-                        <li>Fortaleci&oacute; el seguimiento de indicadores de costos directos e indirectos, apoyando la planeaci&oacute;n financiera y el forecast del proyecto.</li>
-                    </ul>
-                </div>
-
-                <div class="exp-item">
-                    <div class="exp-header">
-                        <span class="exp-company">Alcald&iacute;a de Dosquebradas</span>
-                        <span class="exp-date">Feb 2018 &ndash; Dic 2018</span>
-                    </div>
-                    <p class="exp-position">Asistente de Coordinaci&oacute;n y Gesti&oacute;n</p>
-                    <ul class="exp-list">
-                        <li>Verific&oacute; el funcionamiento de m&uacute;ltiples &aacute;reas institucionales, identificando oportunidades de optimizaci&oacute;n de procesos y mejora continua.</li>
-                        <li>Articul&oacute; actividades empresariales y procesos de capacitaci&oacute;n, fortaleciendo la gesti&oacute;n administrativa y la eficiencia operativa.</li>
-                        <li>Dise&ntilde;&oacute; planes de mejora y cronogramas de seguimiento que contribuyeron al cumplimiento de metas institucionales y control de indicadores KPI.</li>
-                    </ul>
-                </div>
-
-                <div class="exp-item">
-                    <div class="exp-header">
-                        <span class="exp-company">Personer&iacute;a Municipal de Dosquebradas</span>
-                        <span class="exp-date">Abr 2019 &ndash; Dic 2019</span>
-                    </div>
-                    <p class="exp-position">Asistente de Control Interno</p>
-                    <ul class="exp-list">
-                        <li>Impuls&oacute; la implementaci&oacute;n del Modelo Integrado de Planeaci&oacute;n y Gesti&oacute;n (MIPG), fortaleciendo el cumplimiento normativo y la gesti&oacute;n de riesgos.</li>
-                        <li>Particip&oacute; en auditor&iacute;as internas ejecutando verificaci&oacute;n documental y seguimiento de hallazgos con enfoque en mejora continua.</li>
-                        <li>Consolid&oacute; informaci&oacute;n e informes institucionales, optimizando la gesti&oacute;n documental y la trazabilidad de procesos.</li>
-                    </ul>
-                </div>
-
-                <div class="exp-item">
-                    <div class="exp-header">
-                        <span class="exp-company">Instituto de Desarrollo Municipal</span>
-                        <span class="exp-date">May 2019 &ndash; Dic 2019</span>
-                    </div>
-                    <p class="exp-position">Consultora de Estudios del Sector y Presupuesto</p>
-                    <ul class="exp-list">
-                        <li>Analiz&oacute; estados financieros de oferentes en procesos de selecci&oacute;n y contrataci&oacute;n, verificando la viabilidad financiera y el cumplimiento presupuestal.</li>
-                        <li>Aplic&oacute; criterios de evaluaci&oacute;n presupuestal para estudios del sector, fortaleciendo la transparencia y el an&aacute;lisis financiero en la contrataci&oacute;n p&uacute;blica.</li>
-                    </ul>
-                </div>
-
-                <div class="exp-item">
-                    <div class="exp-header">
-                        <span class="exp-company">Appen Connect</span>
-                        <span class="exp-date">Ene 2020 &ndash; Actualidad</span>
-                    </div>
-                    <p class="exp-position">Evaluadora de Contenido &ndash; An&aacute;lisis de Datos</p>
-                    <ul class="exp-list">
-                        <li>Eval&uacute;a y analiza grandes vol&uacute;menes de informaci&oacute;n digital bajo est&aacute;ndares internacionales de calidad, aplicando pensamiento anal&iacute;tico y metodolog&iacute;as de an&aacute;lisis de datos.</li>
-                        <li>Ejecuta proyectos de an&aacute;lisis de contenido con enfoque en cumplimiento de lineamientos, atenci&oacute;n al detalle y orientaci&oacute;n a resultados.</li>
-                    </ul>
-                </div>
-
-            </section>
-        </main>
-
-        <!-- RIGHT -->
-        <aside class="right-column">
-
-            <!-- COMPETENCIAS TECNICAS -->
-            <section class="right-section">
-                <h3 class="right-title">Competencias T&eacute;cnicas</h3>
-                <div class="skill-tags">
-                    <span class="tag hl">An&aacute;lisis de Costos</span>
-                    <span class="tag hl">Inventarios</span>
-                    <span class="tag hl">Control Presupuestal</span>
-                    <span class="tag">Conciliaciones Contables</span>
-                    <span class="tag">Estados Financieros</span>
-                    <span class="tag">Planeaci&oacute;n Financiera</span>
-                    <span class="tag">Control Interno</span>
-                    <span class="tag">Auditor&iacute;a</span>
-                    <span class="tag">Indicadores KPI</span>
-                    <span class="tag">Rentabilidad</span>
-                    <span class="tag">Forecast</span>
-                    <span class="tag">Optimizaci&oacute;n de Procesos</span>
-                    <span class="tag">Gesti&oacute;n Documental</span>
-                    <span class="tag">An&aacute;lisis Financiero</span>
-                    <span class="tag">Mejora Continua</span>
-                    <span class="tag">Gesti&oacute;n de Riesgos</span>
-                    <span class="tag">Cumplimiento Normativo</span>
-                </div>
-            </section>
-
-            <!-- HERRAMIENTAS -->
-            <section class="right-section">
-                <h3 class="right-title">Herramientas</h3>
-                <div class="tool-item"><span class="dot"></span>Microsoft Excel Avanzado</div>
-                <div class="tool-item"><span class="dot"></span>Microsoft Office 365</div>
-                <div class="tool-item"><span class="dot"></span>An&aacute;lisis de Datos</div>
-                <div class="tool-item"><span class="dot"></span>Bases de Datos</div>
-                <div class="tool-item"><span class="dot"></span>Elaboraci&oacute;n de Informes</div>
-            </section>
-
-            <!-- COMPETENCIAS BLANDAS -->
-            <section class="right-section">
-                <h3 class="right-title">Competencias Blandas</h3>
-                <div class="soft-item"><span class="dot-dark"></span>Pensamiento Anal&iacute;tico</div>
-                <div class="soft-item"><span class="dot-dark"></span>Atenci&oacute;n al Detalle</div>
-                <div class="soft-item"><span class="dot-dark"></span>Trabajo en Equipo</div>
-                <div class="soft-item"><span class="dot-dark"></span>Organizaci&oacute;n</div>
-                <div class="soft-item"><span class="dot-dark"></span>Comunicaci&oacute;n Efectiva</div>
-                <div class="soft-item"><span class="dot-dark"></span>Adaptabilidad</div>
-                <div class="soft-item"><span class="dot-dark"></span>Aprendizaje Continuo</div>
-                <div class="soft-item"><span class="dot-dark"></span>Orientaci&oacute;n a Resultados</div>
-            </section>
-
-            <!-- FORMACION -->
-            <section class="right-section">
-                <h3 class="right-title">Formaci&oacute;n Acad&eacute;mica</h3>
-                <div class="edu-item">
-                    <p class="edu-degree">Econom&iacute;a con &eacute;nfasis en Negocios Internacionales</p>
-                    <p class="edu-inst">Universidad Libre Seccional Pereira</p>
-                </div>
-            </section>
-
-            <!-- CURSOS -->
-            <section class="right-section">
-                <h3 class="right-title">Formaci&oacute;n Complementaria</h3>
-                <div class="course-item">C&aacute;lculo e Interpretaci&oacute;n de Indicadores Financieros</div>
-                <div class="course-item">Operaciones Burs&aacute;tiles</div>
-                <div class="course-item">Microeconom&iacute;a I</div>
-            </section>
-
-            <!-- IDIOMAS -->
-            <section class="right-section">
-                <h3 class="right-title">Idiomas</h3>
-                <div class="tool-item"><span class="dot"></span>Espa&ntilde;ol &ndash; Nativo</div>
-            </section>
-
-        </aside>
-    </div>
+<!-- FOTO -->
+<div class="photo-wrapper">
+<div class="photo-frame">
+<img src="diana.png" alt="Diana Marcela Osorio Arias" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+<div class="placeholder" style="display:none"><i class="fas fa-user"></i></div>
+</div>
 </div>
 
-<!-- BOTON PDF -->
-<div id="pdf-btn" style="position:fixed;bottom:20px;right:20px;z-index:9999;">
-    <button onclick="downloadPDF()" style="background:linear-gradient(135deg,#1B3A5C,#2C5F8A);color:#fff;border:none;padding:14px 24px;border-radius:8px;font-family:'Montserrat',sans-serif;font-size:11pt;font-weight:600;cursor:pointer;box-shadow:0 4px 15px rgba(27,58,92,0.4);">
-        Descargar PDF
-    </button>
+<!-- CONTACTO -->
+<div class="sidebar-section">
+<div class="sidebar-title">Contacto</div>
+<div class="contact-item"><i class="fas fa-phone"></i><span>(+57) 320 665 82 86</span></div>
+<div class="contact-item"><i class="fas fa-envelope"></i><span>dianaosorio826@gmail.com</span></div>
+<div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>Dosquebradas, Risaralda, Colombia</span></div>
 </div>
+
+<!-- COMPETENCIAS TECNICAS -->
+<div class="sidebar-section">
+<div class="sidebar-title">Competencias Clave</div>
+<span class="skill-pill featured">Costos</span>
+<span class="skill-pill featured">Inventarios</span>
+<span class="skill-pill featured">Presupuestos</span>
+<span class="skill-pill">Conciliaciones</span>
+<span class="skill-pill">Estados Financieros</span>
+<span class="skill-pill">Control Interno</span>
+<span class="skill-pill">Auditor&iacute;a</span>
+<span class="skill-pill">KPIs</span>
+<span class="skill-pill">Planeaci&oacute;n Financiera</span>
+<span class="skill-pill">Rentabilidad</span>
+<span class="skill-pill">Forecast</span>
+<span class="skill-pill">Mejora Continua</span>
+<span class="skill-pill">Gesti&oacute;n de Riesgos</span>
+<span class="skill-pill">An&aacute;lisis Financiero</span>
+<span class="skill-pill">Gesti&oacute;n Documental</span>
+<span class="skill-pill">Optimizaci&oacute;n</span>
+</div>
+
+<!-- BLANDAS -->
+<div class="sidebar-section">
+<div class="sidebar-title">Habilidades</div>
+<div class="soft-item">Pensamiento Anal&iacute;tico</div>
+<div class="soft-item">Atenci&oacute;n al Detalle</div>
+<div class="soft-item">Trabajo en Equipo</div>
+<div class="soft-item">Organizaci&oacute;n</div>
+<div class="soft-item">Comunicaci&oacute;n Efectiva</div>
+<div class="soft-item">Adaptabilidad</div>
+<div class="soft-item">Aprendizaje Continuo</div>
+<div class="soft-item">Orientaci&oacute;n a Resultados</div>
+</div>
+
+<!-- IDIOMAS -->
+<div class="sidebar-section">
+<div class="sidebar-title">Idiomas</div>
+<div class="lang-item">
+<span>Espa&ntilde;ol</span>
+<div class="lang-bar"><div class="lang-bar-fill" style="width:100%"></div></div>
+</div>
+</div>
+
+</div>
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+
+<!-- NOMBRE -->
+<div class="name-block">
+<h1 class="name">Diana Marcela<br>Osorio Arias</h1>
+<p class="title-role">Analista de Costos e Inventarios</p>
+</div>
+
+<!-- PERFIL -->
+<div class="section">
+<div class="section-head">
+<i class="fas fa-bullseye"></i>
+<h2>Perfil Profesional</h2>
+</div>
+<p class="profile-text">
+Economista con m&aacute;s de 5 a&ntilde;os de experiencia en an&aacute;lisis de costos, control presupuestal, conciliaciones contables y optimizaci&oacute;n de procesos administrativos. Trayectoria s&oacute;lida en sector p&uacute;blico y privado con enfoque en planeaci&oacute;n financiera, seguimiento de indicadores KPI, rentabilidad y mejora continua. Competencias probadas en control interno, auditor&iacute;a, gesti&oacute;n de riesgos, elaboraci&oacute;n de estados financieros y an&aacute;lisis de datos para la toma de decisiones estrat&eacute;gicas. Capacidad demostrada para reducir costos, optimizar recursos y fortalecer el cumplimiento normativo.
+</p>
+</div>
+
+<!-- EXPERIENCIA -->
+<div class="section">
+<div class="section-head">
+<i class="fas fa-briefcase"></i>
+<h2>Experiencia Profesional</h2>
+</div>
+
+<div class="exp-card">
+<div class="exp-top">
+<span class="exp-company">Uni&oacute;n Temporal Prosperidad 2011</span>
+<span class="exp-date">Dic 2014 &ndash; Nov 2017</span>
+</div>
+<p class="exp-role">Asistente de Costos</p>
+<ul class="exp-list">
+<li>Administr&oacute; bases de datos de transporte, equipos, mano de obra y materiales, consolidando informaci&oacute;n para el an&aacute;lisis de costos operativos y control presupuestal.</li>
+<li>Ejecut&oacute; conciliaciones contables con proveedores y subcontratistas, garantizando integridad financiera y detecci&oacute;n oportuna de desviaciones.</li>
+<li>Dise&ntilde;&oacute; cuadros de control e informes de costos que optimizaron el monitoreo de rentabilidad y la asignaci&oacute;n de recursos.</li>
+<li>Fortaleci&oacute; el seguimiento de indicadores KPI de costos directos e indirectos, apoyando el forecast y la planeaci&oacute;n financiera.</li>
+</ul>
+</div>
+
+<div class="exp-card">
+<div class="exp-top">
+<span class="exp-company">Alcald&iacute;a de Dosquebradas</span>
+<span class="exp-date">Feb 2018 &ndash; Dic 2018</span>
+</div>
+<p class="exp-role">Asistente de Coordinaci&oacute;n y Gesti&oacute;n</p>
+<ul class="exp-list">
+<li>Verific&oacute; el funcionamiento de &aacute;reas institucionales, identificando oportunidades de optimizaci&oacute;n de procesos y mejora continua.</li>
+<li>Articul&oacute; actividades empresariales y procesos de capacitaci&oacute;n, fortaleciendo la gesti&oacute;n administrativa.</li>
+<li>Dise&ntilde;&oacute; planes de mejora y cronogramas que contribuyeron al cumplimiento de metas e indicadores institucionales.</li>
+</ul>
+</div>
+
+<div class="exp-card">
+<div class="exp-top">
+<span class="exp-company">Personer&iacute;a Municipal de Dosquebradas</span>
+<span class="exp-date">Abr 2019 &ndash; Dic 2019</span>
+</div>
+<p class="exp-role">Asistente de Control Interno</p>
+<ul class="exp-list">
+<li>Impuls&oacute; la implementaci&oacute;n del MIPG, fortaleciendo el cumplimiento normativo y la gesti&oacute;n de riesgos institucional.</li>
+<li>Particip&oacute; en auditor&iacute;as internas con verificaci&oacute;n documental y seguimiento de hallazgos.</li>
+<li>Consolid&oacute; informes institucionales optimizando la gesti&oacute;n documental y trazabilidad de procesos.</li>
+</ul>
+</div>
+
+<div class="exp-card">
+<div class="exp-top">
+<span class="exp-company">Instituto de Desarrollo Municipal</span>
+<span class="exp-date">May 2019 &ndash; Dic 2019</span>
+</div>
+<p class="exp-role">Consultora de Estudios del Sector y Presupuesto</p>
+<ul class="exp-list">
+<li>Analiz&oacute; estados financieros en procesos de contrataci&oacute;n, verificando viabilidad financiera y cumplimiento presupuestal.</li>
+<li>Aplic&oacute; criterios de evaluaci&oacute;n presupuestal fortaleciendo la transparencia y el an&aacute;lisis financiero.</li>
+</ul>
+</div>
+
+<div class="exp-card">
+<div class="exp-top">
+<span class="exp-company">Appen Connect</span>
+<span class="exp-date">Ene 2020 &ndash; Actualidad</span>
+</div>
+<p class="exp-role">Evaluadora de Contenido &ndash; An&aacute;lisis de Datos</p>
+<ul class="exp-list">
+<li>Analiza grandes vol&uacute;menes de informaci&oacute;n digital bajo est&aacute;ndares internacionales, aplicando pensamiento anal&iacute;tico y metodolog&iacute;as de an&aacute;lisis de datos.</li>
+<li>Ejecuta proyectos de an&aacute;lisis con enfoque en calidad, cumplimiento y atenci&oacute;n al detalle.</li>
+</ul>
+</div>
+</div>
+
+<!-- FORMACION -->
+<div class="section">
+<div class="section-head">
+<i class="fas fa-graduation-cap"></i>
+<h2>Formaci&oacute;n Acad&eacute;mica</h2>
+</div>
+<div class="edu-card">
+<p class="edu-degree">Econom&iacute;a con &eacute;nfasis en Negocios Internacionales</p>
+<p class="edu-school">Universidad Libre Seccional Pereira</p>
+</div>
+</div>
+
+<!-- CURSOS -->
+<div class="section">
+<div class="section-head">
+<i class="fas fa-certificate"></i>
+<h2>Formaci&oacute;n Complementaria</h2>
+</div>
+<div class="course-grid">
+<div class="course-chip">C&aacute;lculo e Interpretaci&oacute;n de Indicadores Financieros</div>
+<div class="course-chip">Operaciones Burs&aacute;tiles</div>
+<div class="course-chip">Microeconom&iacute;a I</div>
+</div>
+</div>
+
+<!-- HERRAMIENTAS -->
+<div class="section">
+<div class="section-head">
+<i class="fas fa-tools"></i>
+<h2>Herramientas</h2>
+</div>
+<div class="tools-row">
+<div class="tool-badge"><i class="fas fa-file-excel"></i>Excel Avanzado</div>
+<div class="tool-badge"><i class="fas fa-database"></i>Bases de Datos</div>
+<div class="tool-badge"><i class="fas fa-chart-bar"></i>Informes &amp; Dashboards</div>
+<div class="tool-badge"><i class="fas fa-cloud"></i>Microsoft 365</div>
+<div class="tool-badge"><i class="fas fa-cogs"></i>An&aacute;lisis de Datos</div>
+</div>
+</div>
+
+</main>
+</div>
+
+<!-- PDF BUTTON -->
+<div id="pdf-btn">
+<button onclick="downloadPDF()"><i class="fas fa-download"></i> Descargar PDF</button>
+</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script>
 function downloadPDF(){
-    var el=document.querySelector('.cv-container');
-    document.getElementById('pdf-btn').style.display='none';
-    html2pdf().set({
-        margin:0,
-        filename:'CV_Diana_Marcela_Osorio_Arias.pdf',
-        image:{type:'jpeg',quality:0.98},
-        html2canvas:{scale:2,useCORS:true},
-        jsPDF:{unit:'mm',format:'a4',orientation:'portrait'}
-    }).from(el).save().then(function(){
-        document.getElementById('pdf-btn').style.display='block';
-    });
+var el=document.getElementById('cv');
+document.getElementById('pdf-btn').style.display='none';
+html2pdf().set({
+margin:0,
+filename:'CV_Diana_Marcela_Osorio_Arias.pdf',
+image:{type:'jpeg',quality:0.98},
+html2canvas:{scale:2,useCORS:true,letterRendering:true},
+jsPDF:{unit:'mm',format:'a4',orientation:'portrait'}
+}).from(el).save().then(function(){
+document.getElementById('pdf-btn').style.display='block';
+});
 }
 </script>
 </body>
