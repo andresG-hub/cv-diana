@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>CV Diana Marcela Osorio Arias - Coordinadora de Talento Humano</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+@page { size: letter; margin: 0; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+    --navy: #0F2027;
+    --navy-mid: #203A43;
+    --navy-light: #2C5364;
+    --gold: #D4A853;
+    --gold-light: #F2D98D;
+    --gold-glow: rgba(212,168,83,0.15);
+    --white: #FFFFFF;
+    --gray-50: #F9FAFB;
+    --gray-100: #F1F5F9;
+    --gray-200: #E2E8F0;
+    --gray-400: #94A3B8;
+    --gray-500: #64748B;
+    --gray-600: #475569;
+    --gray-800: #1E293B;
+}
+body { font-family: 'Inter', sans-serif; font-size: 11px; color: var(--gray-800); line-height: 1.6; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+.page {
+    width: 8.5in; height: 11in;
+    display: grid;
+    grid-template-columns: 2.4in 1fr;
+    page-break-after: always;
+    overflow: hidden;
+}
+.page:last-child { page-break-after: avoid; }
+
+/* SIDEBAR */
+.sidebar {
+    background: linear-gradient(180deg, var(--navy) 0%, var(--navy-mid) 50%, var(--navy-light) 100%);
+    color: var(--white);
+    padding: 32px 20px;
+    height: 100%;
+}
+.sidebar-section { margin-bottom: 20px; }
+.sidebar-title {
+    font-size: 10px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 2px;
+    color: var(--gold); margin-bottom: 12px;
+    padding-bottom: 6px; border-bottom: 1px solid rgba(212,168,83,0.3);
+}
+.contact-item { display: flex; gap: 8px; margin-bottom: 9px; font-size: 10px; color: rgba(255,255,255,0.9); }
+.contact-dot { width: 5px; height: 5px; background: var(--gold); border-radius: 50%; margin-top: 5px; flex-shrink: 0; }
+
+/* Photo */
+.photo-box {
+    width: 120px; height: 120px;
+    border-radius: 50%; overflow: hidden;
+    margin: 0 auto 22px;
+    border: 3px solid var(--gold);
+}
+.photo-box img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; display: block; }
+
+/* Pills */
+.pill { display: inline-block; padding: 3px 9px; margin: 3px 2px; border-radius: 12px; font-size: 8.5px; font-weight: 500; background: rgba(212,168,83,0.12); color: var(--gold-light); border: 1px solid rgba(212,168,83,0.25); }
+.pill.f { background: var(--gold); color: var(--navy); font-weight: 600; border-color: var(--gold); }
+
+/* Soft items */
+.s-item { margin-bottom: 7px; font-size: 9.5px; color: rgba(255,255,255,0.85); padding-left: 12px; position: relative; }
+.s-item::before { content: ''; position: absolute; left: 0; top: 5px; width: 5px; height: 5px; background: var(--gold); border-radius: 50%; }
+
+/* Lang */
+.lang-row { display: flex; justify-content: space-between; font-size: 10px; color: rgba(255,255,255,0.9); margin-bottom: 4px; }
+.lang-bar { height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; margin-bottom: 10px; }
+.lang-fill { height: 100%; border-radius: 2px; background: linear-gradient(90deg, var(--gold), var(--gold-light)); }
+
+/* MAIN */
+.main { padding: 32px 30px; height: 100%; }
+
+.name { font-size: 26px; font-weight: 800; color: var(--gray-800); line-height: 1.1; margin-bottom: 4px; }
+.subtitle { font-size: 11px; font-weight: 600; color: var(--gray-600); margin-bottom: 3px; }
+.role { font-size: 12px; font-weight: 500; color: var(--gold); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px; }
+
+.sec-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--navy); margin-bottom: 12px; padding-bottom: 5px; border-bottom: 2px solid var(--gray-200); }
+
+.profile { font-size: 10.5px; line-height: 1.8; color: var(--gray-600); margin-bottom: 18px; padding: 12px 14px; background: var(--gray-100); border-radius: 8px; border-left: 3px solid var(--gold); }
+
+/* Experience */
+.exp { margin-bottom: 16px; padding: 12px 14px; background: var(--gray-50); border-radius: 8px; border-left: 3px solid var(--gold); }
+.exp-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px; }
+.exp-company { font-size: 11px; font-weight: 700; color: var(--navy); }
+.exp-date { font-size: 8.5px; font-weight: 600; color: var(--gold); background: var(--gold-glow); padding: 3px 8px; border-radius: 8px; }
+.exp-role { font-size: 10px; font-weight: 600; color: var(--gray-600); margin-bottom: 6px; }
+.exp-list { list-style: none; padding: 0; }
+.exp-list li { font-size: 10px; line-height: 1.7; color: var(--gray-600); margin-bottom: 5px; padding-left: 12px; position: relative; }
+.exp-list li::before { content: ''; position: absolute; left: 0; top: 6px; width: 5px; height: 5px; border: 2px solid var(--gold); border-radius: 50%; }
+
+/* Education */
+.edu { margin-bottom: 10px; padding: 10px 14px; background: var(--gray-50); border-radius: 6px; }
+.edu-deg { font-size: 10.5px; font-weight: 600; color: var(--navy); }
+.edu-sch { font-size: 9.5px; color: var(--gray-500); margin-top: 2px; }
+
+/* Courses */
+.course-grid { display: flex; flex-wrap: wrap; gap: 6px; }
+.course-chip { font-size: 9px; padding: 6px 12px; background: var(--gray-100); border-radius: 6px; color: var(--gray-600); border: 1px solid var(--gray-200); }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<div class="page">
+<aside class="sidebar">
+<div class="photo-box">
+<img src="diana.png" alt="Diana Marcela Osorio Arias">
+</div>
+<div class="sidebar-section">
+<div class="sidebar-title">Contacto</div>
+<div class="contact-item"><span class="contact-dot"></span><span>(+57) 320 665 82 86</span></div>
+<div class="contact-item"><span class="contact-dot"></span><span>dianaosorio826@gmail.com</span></div>
+<div class="contact-item"><span class="contact-dot"></span><span>Dosquebradas, Risaralda, Colombia</span></div>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-title">Competencias Clave</div>
+<span class="pill f">Coordinaci&oacute;n Administrativa</span>
+<span class="pill f">Planeaci&oacute;n Estrat&eacute;gica</span>
+<span class="pill f">Liderazgo</span>
+<span class="pill">Control Interno</span>
+<span class="pill">Seguimiento de Procesos</span>
+<span class="pill">Gesti&oacute;n Documental</span>
+<span class="pill">Elaboraci&oacute;n de Informes</span>
+<span class="pill">Cumplimiento Normativo</span>
+<span class="pill">Administraci&oacute;n de Personal</span>
+<span class="pill">Indicadores de Gesti&oacute;n</span>
+<span class="pill">Optimizaci&oacute;n de Procesos</span>
+<span class="pill">Mejora Continua</span>
+<span class="pill">Trabajo Bajo Presi&oacute;n</span>
+<span class="pill">Enfoque al Cliente</span>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-title">Habilidades</div>
+<div class="s-item">Comunicaci&oacute;n Asertiva</div>
+<div class="s-item">Liderazgo</div>
+<div class="s-item">Trabajo en Equipo</div>
+<div class="s-item">Capacidad Anal&iacute;tica</div>
+<div class="s-item">Organizaci&oacute;n</div>
+<div class="s-item">Orientaci&oacute;n al Servicio</div>
+<div class="s-item">Adaptabilidad</div>
+<div class="s-item">Resoluci&oacute;n de Problemas</div>
+<div class="s-item">Orientaci&oacute;n a Resultados</div>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-title">Herramientas</div>
+<div class="s-item">Microsoft Office 365</div>
+<div class="s-item">Microsoft Excel Avanzado</div>
+<div class="s-item">Microsoft Word</div>
+<div class="s-item">Microsoft PowerPoint</div>
+<div class="s-item">Elaboraci&oacute;n de Informes</div>
+<div class="s-item">Bases de Datos</div>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-title">Idiomas</div>
+<div class="lang-row"><span>Espa&ntilde;ol</span><span>Nativo</span></div>
+<div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
+</div>
+</aside>
+<main class="main">
+<h1 class="name">Diana Marcela<br>Osorio Arias</h1>
+<p class="subtitle">Economista</p>
+<p class="role">Coordinadora de Talento Humano</p>
+
+<div class="sec-title">Perfil Profesional</div>
+<div class="profile">
+Economista con m&aacute;s de 5 a&ntilde;os de experiencia en coordinaci&oacute;n administrativa, planeaci&oacute;n estrat&eacute;gica, seguimiento de procesos y gesti&oacute;n documental en el sector p&uacute;blico y privado. Trayectoria comprobada en articulaci&oacute;n de equipos interdisciplinarios, verificaci&oacute;n del cumplimiento normativo, control interno, elaboraci&oacute;n de informes de gesti&oacute;n y optimizaci&oacute;n de procesos administrativos. Capacidad anal&iacute;tica para la toma de decisiones, comunicaci&oacute;n asertiva, liderazgo orientado a resultados y habilidad demostrada para trabajar bajo presi&oacute;n coordinando m&uacute;ltiples &aacute;reas y dependencias. Enfoque en la mejora continua, el servicio al cliente interno y la administraci&oacute;n eficiente del personal y los recursos.
+</div>
+
+<div class="sec-title">Experiencia Profesional</div>
+
+<div class="exp">
+<div class="exp-top">
+<span class="exp-company">Uni&oacute;n Temporal Prosperidad 2011</span>
+<span class="exp-date">Dic 2014 – Nov 2017</span>
+</div>
+<p class="exp-role">Asistente Administrativa de Costos</p>
+<ul class="exp-list">
+<li>Administr&oacute; bases de datos de personal, transporte, equipos y materiales, coordinando la consolidaci&oacute;n de informaci&oacute;n entre m&uacute;ltiples &aacute;reas para la elaboraci&oacute;n de informes de gesti&oacute;n.</li>
+<li>Ejecut&oacute; conciliaciones y verificaciones documentales con proveedores y subcontratistas, garantizando el cumplimiento de procedimientos administrativos.</li>
+<li>Dise&ntilde;&oacute; cuadros de control y seguimiento que optimizaron la organizaci&oacute;n administrativa y la asignaci&oacute;n eficiente de recursos.</li>
+<li>Fortaleci&oacute; el seguimiento de indicadores de gesti&oacute;n, apoyando la planeaci&oacute;n estrat&eacute;gica y la toma de decisiones del equipo directivo.</li>
+</ul>
+</div>
+
+<div class="exp">
+<div class="exp-top">
+<span class="exp-company">Alcald&iacute;a de Dosquebradas</span>
+<span class="exp-date">Feb 2018 – Dic 2018</span>
+</div>
+<p class="exp-role">Asistente de Coordinaci&oacute;n y Gesti&oacute;n</p>
+<ul class="exp-list">
+<li>Coordin&oacute; el seguimiento y verificaci&oacute;n del funcionamiento de m&uacute;ltiples dependencias institucionales, asegurando la articulaci&oacute;n entre equipos de trabajo.</li>
+<li>Lider&oacute; la organizaci&oacute;n de actividades interinstitucionales y procesos de capacitaci&oacute;n, fortaleciendo la gesti&oacute;n administrativa y el desarrollo del personal.</li>
+<li>Dise&ntilde;&oacute; planes de mejora, cronogramas y mecanismos de seguimiento que contribuyeron al cumplimiento de metas e indicadores de gesti&oacute;n.</li>
+<li>Apoy&oacute; la planeaci&oacute;n estrat&eacute;gica institucional mediante el an&aacute;lisis de procesos y la elaboraci&oacute;n de informes para la toma de decisiones.</li>
+</ul>
+</div>
+
+</main>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page">
+<aside class="sidebar">
+<div class="sidebar-section" style="margin-top:32px">
+<div class="sidebar-title">Formaci&oacute;n Acad&eacute;mica</div>
+<div style="margin-bottom:12px">
+<div style="font-size:10px;font-weight:600;color:var(--white)">Econom&iacute;a con &eacute;nfasis en Negocios Internacionales</div>
+<div style="font-size:9px;color:var(--gray-400);margin-top:3px">Universidad Libre Seccional Pereira</div>
+</div>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-title">Formaci&oacute;n Complementaria</div>
+<div class="s-item">C&aacute;lculo e Interpretaci&oacute;n de Indicadores Financieros</div>
+<div class="s-item">Operaciones Burs&aacute;tiles</div>
+<div class="s-item">Microeconom&iacute;a I</div>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-title">Keywords ATS</div>
+<span class="pill">Coordinaci&oacute;n</span>
+<span class="pill">Talento Humano</span>
+<span class="pill">Administraci&oacute;n</span>
+<span class="pill">Planeaci&oacute;n</span>
+<span class="pill">Control Interno</span>
+<span class="pill">Gesti&oacute;n Documental</span>
+<span class="pill">Liderazgo</span>
+<span class="pill">Microsoft Office</span>
+<span class="pill">Indicadores</span>
+<span class="pill">Mejora Continua</span>
+<span class="pill">Trabajo en Equipo</span>
+<span class="pill">Comunicaci&oacute;n</span>
+<span class="pill">Cumplimiento</span>
+<span class="pill">Organizaci&oacute;n</span>
+</div>
+</aside>
+<main class="main">
+
+<div class="sec-title">Experiencia Profesional (cont.)</div>
+
+<div class="exp">
+<div class="exp-top">
+<span class="exp-company">Personer&iacute;a Municipal de Dosquebradas</span>
+<span class="exp-date">Abr 2019 – Dic 2019</span>
+</div>
+<p class="exp-role">Asistente de Control Interno</p>
+<ul class="exp-list">
+<li>Apoy&oacute; la implementaci&oacute;n del Modelo Integrado de Planeaci&oacute;n y Gesti&oacute;n (MIPG), asegurando el cumplimiento normativo y la administraci&oacute;n adecuada de los procesos institucionales.</li>
+<li>Particip&oacute; en auditor&iacute;as internas realizando verificaci&oacute;n documental, seguimiento de hallazgos y coordinaci&oacute;n con diferentes dependencias para la subsanaci&oacute;n de observaciones.</li>
+<li>Consolid&oacute; informes de gesti&oacute;n institucional, optimizando la gesti&oacute;n documental, la trazabilidad de procesos y el flujo de informaci&oacute;n entre &aacute;reas.</li>
+<li>Contribuy&oacute; al fortalecimiento del control interno mediante el monitoreo de indicadores y la gesti&oacute;n de riesgos organizacionales.</li>
+</ul>
+</div>
+
+<div class="exp">
+<div class="exp-top">
+<span class="exp-company">Instituto de Desarrollo Municipal</span>
+<span class="exp-date">May 2019 – Dic 2019</span>
+</div>
+<p class="exp-role">Consultora de Estudios del Sector y Presupuesto</p>
+<ul class="exp-list">
+<li>Analiz&oacute; documentaci&oacute;n de procesos de selecci&oacute;n y contrataci&oacute;n, verificando el cumplimiento de requisitos y la viabilidad administrativa de los oferentes.</li>
+<li>Elabor&oacute; informes t&eacute;cnicos y estudios del sector que apoyaron la planeaci&oacute;n y la toma de decisiones en procesos de contrataci&oacute;n p&uacute;blica.</li>
+</ul>
+</div>
+
+<div class="exp">
+<div class="exp-top">
+<span class="exp-company">Appen Connect</span>
+<span class="exp-date">Ene 2020 – Actualidad</span>
+</div>
+<p class="exp-role">Evaluadora de Contenido – An&aacute;lisis de Informaci&oacute;n</p>
+<ul class="exp-list">
+<li>Eval&uacute;a y analiza grandes vol&uacute;menes de informaci&oacute;n bajo est&aacute;ndares internacionales de calidad, demostrando capacidad anal&iacute;tica, organizaci&oacute;n y trabajo bajo presi&oacute;n.</li>
+<li>Ejecuta proyectos de an&aacute;lisis con enfoque en cumplimiento de lineamientos, atenci&oacute;n al detalle, comunicaci&oacute;n efectiva y orientaci&oacute;n a resultados.</li>
+</ul>
+</div>
+
+</main>
+</div>
+
+</body>
+</html>
